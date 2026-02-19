@@ -1,0 +1,10 @@
+let mongoose=require("mongoose")
+let express=require("express")
+const rt = require("./routes/rt")
+mongoose.connect("mongodb://localhost:27017/v25hfs2userlogindb").then(()=>{
+    console.log("ok")
+})
+let app=express()
+app.listen(5000)
+app.use(express.json())
+app.use("/",rt)
